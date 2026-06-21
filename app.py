@@ -43,7 +43,7 @@ def analyze_cotton_leaf(image_path):
     leaf_contour = max(contours, key=cv2.contourArea)
     leaf_area = cv2.contourArea(leaf_contour)
     if leaf_area <= 0:
-    return None, "Invalid leaf area detected"
+        return None, "Invalid leaf area detected"
     if leaf_area < 500:  # Minimum leaf area threshold
         return None, "Error: Leaf too small or not detected"
     
